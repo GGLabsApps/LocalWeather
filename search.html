@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Search City</title>
+		<meta charset="UTF-8">
+		<meta name="author" content="GreG" />
+		<meta name="description" content="Short outline of the page topics" />
+		<!-- Responsive Web -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- Local links to CSS and JavaScript -->
+		<link rel="stylesheet" href="css/style.css" type="text/css">
+		<script type="text/javascript" src="js/storage.js"></script>
+		
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		
+		<!-- Weather Icons -->
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.css">
+		
+		<!-- Font Awesome Icons - fa  -->
+		<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	</head>
+
+	<body>
+		<!-- Transparent overlay -->
+		<div class="container content">
+			<!-- Bootstrap Navbar -->
+			<nav class="navbar">
+				<a class="navbar-brand" href="index.html">
+					<!-- fa fa-sun-o is from Font Awesome icons -->
+					<!-- We use role to let Screen Readers know it's an icon -->
+					<span class="fa fa-sun-o" role="img"></span>
+					<strong>Local</strong>Weather
+				</a>
+
+				<!-- The date will be dynamic using JavaScript -->
+				<span id="date" class="lead">
+					12:00 PM | Apr 11, 2018
+				</span>
+			</nav>
+
+			<!-- Search Section -->
+			<div class="container-fluid mt-5">
+				<div class="row">
+					<div class="search col-10">
+						<div class="form-group text-center">
+							<form action="index.html" method="GET">
+								<label for="txtCity">Enter city</label>
+								<input id="txtCity" name="city" type="text" class="form-control" aria-describeby="cityHelp" placeholder="Enter a city name"></input>
+								<button id="btnSearch" class="btn btn-primary btn-search" type="submit" style="width: 100px;">Search</button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

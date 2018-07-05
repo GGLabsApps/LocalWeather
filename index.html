@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>LocalWeather</title>
+		<meta charset="UTF-8">
+		<meta name="author" content="GreG" />
+		<meta name="description" content="Short outline of the page topics" />
+		<!-- Responsive Web -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- Local links to CSS and JavaScript -->
+		<link rel="stylesheet" href="css/style.css" type="text/css">
+		<script type="text/javascript" src="js/weather.js"></script>
+		
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		
+		<!-- Weather Icons -->
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.css">
+		
+		<!-- Font Awesome Icons - fa  -->
+		<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+		<!-- Sweet Alert -->
+		<!-- <script src="sweetalert2.all.min.js"></script> -->
+		<!-- <script src="https://unpkg.com/promise-polyfill@7.1.0/dist/promise.min.js"></script> -->
+	</head>
+
+	<body>
+		<div class="container-fluid content">
+			<!-- Bootstrap Navbar -->
+			<nav class="navbar">
+				<a class="navbar-brand" href="#">
+					<!-- fa fa-sun-o is from Font Awesome icons -->
+					<!-- We use role to let Screen Readers know it's an icon -->
+					<span class="fa fa-sun-o" role="img"></span>
+					<strong>Local</strong>Weather
+				</a>
+				<a href="#" id="btn-current-location" class="item text-center">
+				<span class="fa fa-refresh mr-2" role="img"></span>Get Current Location</a>
+				<a href="search.html" class="item text-center"><span class="fa fa-search mr-2" role="img"></span>Search</a>
+
+				<!-- The date will be dynamic using JavaScript -->
+				<span id="date" class="lead">12:00 PM | Apr 11, 2018</span>
+			</nav>
+
+			<!-- Loading Spinner -->
+			<div class="loader-container text" id="loader-container">
+				<div class="spinner" id="spinner">
+					<div class="rect1"></div>
+					<div class="rect2"></div>
+					<div class="rect3"></div>
+					<div class="rect4"></div>
+					<div class="rect5"></div>
+			 	</div> 
+			</div>
+
+			<!-- Weather Section -->
+			<div class="weather-container mt-3" id="weather-container">
+				<div class="row">
+					<!-- mx-auto Center an element -->
+					<div class="weather mx-auto">
+						<!-- Weather Head Section -->
+						<div class="weather-head">
+							<h1 id="location" class="text-center display-4">N/A</h1>
+							
+							<div id="border-bottom" class="row">
+								<div id="description" class="col-6 text-center">
+									<span id="icon-desc" role="img" class="wi wi-owm-200"></span>
+									<p id="text-desc">N/A</p>
+								</div>
+								
+								<div id="temperature" class="col-6 text-center">
+									<div class="row">
+										<div class="mx-auto text-center">
+											<span id="temperature-data">N/A</span>
+											<span id="icon-temperature" role="img" class="wi wi-thermometer"></span>
+										</div>
+									</div>
+
+									<div class="row">
+										<div class="mx-auto text-center">
+											<span id="degree-type">C&deg;</span>
+											<label class="switch">
+												<input type="checkbox" id="temperature-switch">
+												<span class="slider round"></span>
+											</label>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- Weather Body Section -->
+						<div class="weather-body">
+							<!-- Weather Body Titles -->
+							<div class="row">
+								<div class="humidity col-4 text-center">
+									<span>Humidity</span>
+								</div>
+
+								<div class="wind-speed col-4 text-center">
+									<span>Wind speed</span>
+								</div>
+
+								<div class="wind-degree col-4 text-center">
+									<span>Wind degree</span>
+								</div>
+							</div>
+
+							<div class="row">
+								<div class="icon col-4 text-center">
+									<span role="img" class="wi wi-raindrops"></span>
+								</div>
+								<div class="icon col-4 text-center">
+									<span role="img" class="wi wi-strong-wind"></span>
+								</div>
+
+								<div class="icon col-4 text-center">
+									<span role="img" class="wi wi-direction-up"></span>
+								</div>
+							</div>
+						</div>
+						
+						<!-- Weather Body Data -->
+						<div class="row text-center">
+							<div class="col-4 text-center humidity-data">
+								<span id="humidity-data-text">N/A</span>
+							</div>
+							<div class="col-4 text-center wind-speed-data">
+								<span id="wind-speed-data-text">N/A</span>
+							</div>
+							<div class="col-4 text-center wind-degree-data">
+								<span id="wind-degree-data-text">N/A</span>
+							</div>
+						</div>
+					</div>
+				</div>
+<!-- 				<div class="error text-center mx-auto">
+					<label class="alert alert-danger display-4">City Not Found</label>
+				</div> -->
+			</div>
+		</div>
+	</body>
+</html>

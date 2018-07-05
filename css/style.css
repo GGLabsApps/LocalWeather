@@ -1,0 +1,271 @@
+body {
+	background-image: url("../img/bg.png");
+	
+	/*
+		Resize the background image to cover the entire container,
+		even if it has to stretch the image or cut a little bit off one of the edges
+	*/
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	
+	/*
+		Set the left and right margins to auto to horizontally center that element
+		withing the container. The element will take up the width you specify,
+		then the remaining space will be split evenly between the two margins.
+	*/
+	margin: 0 auto;
+	
+	/* Text Color */
+	color: white;
+	
+	/*
+		What is ViewPort ?
+		The viewport is the user's visible area of a web page.
+		vh - ViewPort Height - a percentage of the full viewport height.
+	*/
+	min-height: 100vh;
+}
+
+div {
+	margin: auto auto;
+}
+
+.content {
+	background-color: rgba(31, 34, 118, 0.4);
+	min-height: 100vh;
+	min-width: 100vw;
+}
+
+.navbar {
+	background-color: rgb(54, 165, 219);
+	color: white;
+}
+
+.navbar a {
+	font-size: 25px;
+	color: white;
+}
+
+.weather, .search {
+	/*
+		PX: px - Unit of the screen
+		EM: em - Unit that contains parental element of pixel size
+		REM: rem - Unit that contains root element of pixel size
+	
+		REM depends on the default browser or html property sizing.
+		This is not a fixed element because it depends on measurement so 
+		when the parental measurment change, the value of rem is changed.
+		Example:
+		Browser default sont size is 14px,
+		1rem = 14px;
+	*/
+	box-shadow: 0px 0px 10px black;
+	padding: 3vh;
+	border: 1px solid white;
+	background-color: rgba(0,0,0,0.4);
+	color: white;
+	border-radius: 15px;
+}
+
+#border-bottom {
+	border-bottom: 1px solid rgba(255,255,255,0.5);
+	margin-bottom: 1rem;
+}
+
+.search {
+	padding: 0.5em;
+	font-size: 2em;
+}
+
+.weather-container {
+	margin: 2vh;
+	display: none;
+}
+
+#description {
+}
+
+#icon-desc {
+	font-size: 5rem;
+	padding-top: 2rem;
+}
+
+#text-desc {
+	margin: auto auto;
+	font-size: 1.5rem;
+	padding-top: 1rem;
+}
+
+#temperature {
+	height: 100%;
+	margin: auto 0;
+	font-size: 3rem;
+}
+
+#temp-degree {
+	font-size: 2rem;
+}
+
+.icon {
+	/*border: 1px solid rgba(255, 255, 255, 0.30);
+	border-radius: 4px;*/
+	font-size: 2rem;
+}
+
+.humidity, .wind-speed, .wind-degree {
+	font-size: 1.2rem;
+}
+
+.humidity-data, .wind-speed-data, .wind-degree-data {
+	/*border-top: 1px solid rgba(255,255,255,0.35);*/
+	font-size: 2rem;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+}
+
+#date {
+	font-size: : 5rem;
+}
+
+#loader-container {
+	display: block;
+}
+
+.spinner {
+	margin: 10vh auto;
+	height: 150px;
+	text-align: center;
+	font-size: 15px;
+}
+
+.spinner > div {
+	box-shadow: 0px 0px 20px rgba(160, 232, 255, 0.7);
+	background-color: rgba(255, 255, 255, 0.8);
+	height: 100%;
+	width: 6px;
+	display: inline-block;
+
+	-webkit-animation: sk-stretchdelay 1.2s infinite ease-in-out;
+	animation: sk-stretchdelay 1.2s infinite ease-in-out;
+}
+
+.spinner .rect2 {
+	-webkit-animation-delay: -1.1s;
+	animation-delay: -1.1s;
+}
+
+.spinner .rect3 {
+	-webkit-animation-delay: -1.0s;
+	animation-delay: -1.0s;
+}
+
+.spinner .rect4 {
+	-webkit-animation-delay: -0.9s;
+	animation-delay: -0.9s;
+}
+
+.spinner .rect5 {
+	-webkit-animation-delay: -0.8s;
+	animation-delay: -0.8s;
+}
+
+@-webkit-keyframes sk-stretchdelay {
+  0%, 40%, 100% { -webkit-transform: scaleY(0.4) }  
+  20% { -webkit-transform: scaleY(1.0) }
+}
+
+@keyframes sk-stretchdelay {
+  0%, 40%, 100% { 
+    transform: scaleY(0.4);
+    -webkit-transform: scaleY(0.4);
+  }  20% { 
+    transform: scaleY(1.0);
+    -webkit-transform: scaleY(1.0);
+  }
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {display:none;}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+@media only screen and (max-width: 600px) {
+	a.item {
+		margin: 4px auto;
+	}
+}
+
+a.item {
+	border-radius: 6px;
+	padding: 8px;
+	border: solid 2px white;
+	font-size: 1rem;
+	border-color: #ffffff;
+	transition: .1s ease-in;
+}
+
+a.item:hover {
+	text-decoration: none;
+	color: white;
+	background: #007bff;
+	border-color: #007bff;
+	transition: 65ms ease-out;
+}
+
+.btn-search {
+	margin-top: 1em;
+}
